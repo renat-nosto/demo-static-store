@@ -1,28 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Demo store</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Demo store</title>
+  <style>
+      .content {
+          width: 200px;
+          margin: 0 auto;
+      }
+
+      .target {
+          margin: 1em;
+          padding: 0.5em;
+          line-height: 1.2em;
+          background: azure;
+          border: 1px solid cornflowerblue;
+          border-radius: 1em;
+          text-align: center;
+      }
+  </style>
 </head>
 <body>
 <div class="nosto_customer" style="display:none">
-<!--    <span class="email">john.doe@example.com</span>-->
-<!--    <span class="first_name">John</span>-->
-<!--    <span class="last_name">Doe</span>-->
-<!--    <span class="customer_reference">e18daf14-d715-4d77-82f2-93eceb4ae1ef</span>-->
-<!--    <span class="marketing_permission">false</span>-->
+  <!--    <span class="email">john.doe@example.com</span>-->
+  <!--    <span class="first_name">John</span>-->
+  <!--    <span class="last_name">Doe</span>-->
+  <!--    <span class="customer_reference">e18daf14-d715-4d77-82f2-93eceb4ae1ef</span>-->
+  <!--    <span class="marketing_permission">false</span>-->
 </div>
 <script>
-    let customer = document.querySelector(".nosto_customer")
-    location.search.substr(1).split("&").map(s => s.split("=")).forEach(([k,v]) =>
-        customer.insertAdjacentHTML("beforeend",`<span class="${k}">${v}</span>`))
+  let customer = document.querySelector(".nosto_customer")
+  window.params = Object.fromEntries(location.search.substr(1).split("&").map(s => s.split("=")))
+  if (window.params.customer) {
+    Object.entries(window.params).forEach(([k, v]) =>
+      customer.insertAdjacentHTML("beforeend", `<span class="${k}">${v}</span>`))
+  }
 </script>
 
-<script src="https://connect.staging.nosto.com/include/qvuhs4m3"></script>
-<script>nostojs(function(api){api.addSegmentCodeToVisit("code")})</script>
 
-    <div class="nosto_element" id="frontpage-nosto-1"></div>
+<!--script>nostojs(function(api){api.addSegmentCodeToVisit("code")})</script-->
+<div class="content">
+  <br>Nosto script added below:
+  <script src="https://connect.staging.nosto.com/include/qvuhs4m3"></script>
+  <br>Placement target without filter below
+  <div id="target-nonfiltered" class="target">
+    Placement target without filter
+  </div>
+  <br>Placement target with filter below
+  <div id="target-filtered" class="target">
+    Placement target with filter
+  </div>
+  <div id="hidden" style="visibility: hidden"></div>
+  <div style="height: 1px; overflow: hidden">
+    <img src="1.jpg">
+    <img src="2.jpg">
+    <img src="3.jpg">
+    <span>1</span>
+    <span>1</span>
+    <ul>
+      <li>500</li>
+      <li>10</li>
+      <li>0</li>
+      <li>0</li>
+      <li>0</li>
+      <li>0</li>
+      <li>0</li>
+      <li>0</li>
+      <li>0</li>
+      <li>0</li>
+      <li>00</li>
+      <li></li>
+      <li>0</li>
+      <li>0</li>
+      <li>0</li>
+      <li>0</li>
+      <li>0</li>
+      <li>0</li>
+      <li></li>
+      <li>9</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+      <li>loads of content</li>
+    </ul>
+  </div>
+</div>
+<script>
+  (function () {
+    const now = Date.now()
+    let d
+    while ((d = (now + (window.params.tagging_delay || 500) - Date.now())) > 0) {
+      document.getElementById("hidden").innerHTML = `<span><span><span>tricky html: </span>${d | 0}</span></span>`
+    }
+  })()
+</script>
+<div class="content">
+  Page type tagging:
+  <div class="nosto_page_type">front</div>
+</div>
+<script>
+  if (window.params.page_type) {
+    document.querySelector(".nosto_page_type").innerHTML = window.params.page_type
+  }
+</script>
+<div class="nosto_element" id="frontpage-nosto-1"></div>
+<script>
+  (function () {
+    const now = Date.now()
+    let d
+    while ((d = (now + (window.params.load_delay || 500) - Date.now())) > 0) {
+      document.getElementById("hidden").innerHTML = `<span><span><span>tricky html: </span>${d | 0}</span></span>`
+    }
+  })()
+</script>
+<div class="content">
+  Pageload
+</div>
+
 </body>
 </html>
