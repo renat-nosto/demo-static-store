@@ -167,7 +167,7 @@
   (function () {
     const now = Date.now()
     let d
-    while ((d = (now + (window.params.tagging_delay || 500) - Date.now())) > 0) {
+    while ((d = (now + (+(window.params.tagging_delay || 500)) - Date.now())) > 0) {
       document.getElementById("hidden").innerHTML = `<span><span><span>tricky html: </span>${d | 0}</span></span>`
     }
   })()
@@ -186,7 +186,7 @@
   (function () {
     const now = Date.now()
     let d
-    while ((d = (now + (window.params.load_delay || 500) - Date.now())) > 0) {
+    while ((d = (now + (+(window.params.load_delay || 500)) - Date.now())) > 0) {
       document.getElementById("hidden").innerHTML = `<span><span><span>tricky html: </span>${d | 0}</span></span>`
     }
   })()
