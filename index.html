@@ -56,7 +56,7 @@
   <div id="target-filtered" class="target">
     Placement target with filter
   </div>
-  <div id="hidden" style="visibility: hidden"></div>
+  <div id="hidden" style="visibility: hidden; height: 1px; overflow: hidden"></div>
   <div style="height: 1px; overflow: hidden">
     <img src="1.jpg">
     <img src="2.jpg">
@@ -168,13 +168,20 @@
   </div>
 </div>
 <script>
-  (function () {
-    const now = Date.now()
-    let d
-    while ((d = (now + (+(window.params.tagging_delay || 700)) - Date.now())) > 0) {
-      document.getElementById("hidden").innerHTML = `<span><span><span>tricky html: </span>${d | 0}</span></span>`
+  window.loadTarget = Date.now() + (window.params.tagging_delay || 700)
+  window.loop50ms = function () {
+    const loopTarget = Date.now() + 50;
+    while (Date.now() < loopTarget) {
+      document.getElementById("hidden").innerHTML += `<span><span><span>tricky html: </span></span></span>`
     }
-  })()
+  }
+  window.extraScript = `
+  console.log('es')
+  if(Date.now() < loadTarget) {
+    loop50ms();
+    document.write("<scr"+"ipt>"+extraScript+"</scr"+"ipt>")
+  }`
+  document.write("<scr"+"ipt>"+extraScript+"</scr"+"ipt>")
 </script>
 <div class="content">
   Page type tagging:
@@ -1206,13 +1213,8 @@
 
 <div class="nosto_element" id="frontpage-nosto-1"></div>
 <script>
-  (function () {
-    const now = Date.now()
-    let d
-    while ((d = (now + (+(window.params.load_delay || 700)) - Date.now())) > 0) {
-      document.getElementById("hidden").innerHTML = `<span><span><span>tricky html: </span>${d | 0}</span></span>`
-    }
-  })()
+  window.loadTarget = Date.now() + (window.params.load_delay || 1700)
+  document.write("<scr"+"ipt>"+extraScript+"</scr"+"ipt>")
 </script>
 <div class="content">
   Pageload
