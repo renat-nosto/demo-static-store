@@ -8,9 +8,19 @@
       display: block;
     }
   </style>
-  <script src="https://connect.staging.nosto.com/include/qvuhs4m3"></script>
+
 </head>
 <body>
+<script src="include.js"></script>
+<br>Placement target without filter below
+<div id="target-nonfiltered" class="target">
+  Placement target without filter
+</div>
+<br>Placement target with filter below
+<div id="target-filtered" class="target">
+  Placement target with filter
+</div>
+<div class="nosto_page_type">product</div>
 <div class="nosto_product">
   <span class="url">https://renat-nosto.github.io/demo-static-store/1.html</span>
   <span class="product_id">1</span>
@@ -25,7 +35,18 @@
   <span class="list_price">120</span>
   <span class="brand">Demo</span>
   <span class="sdf">value</span>
+  <div class="sdf layout">
+      <article class="article">
+        <main class="article main">
+          <span class="elemental name">xxxx</span>
+          <span class="elemental category">xxxx</span>
+        </main>
+      </article>
   </div>
+  </div>
+<div id="nosto-eager" class="nosto_element " >eager</div>
+<div style="height: 600px"></div>
+<div id="nosto-lazy" class="nosto_element nosto_lazy" >lazy</div>
 </div>
 </body>
 </html>

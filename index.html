@@ -44,10 +44,10 @@
 </script>
 
 
-<!--script>nostojs(function(api){api.addSegmentCodeToVisit("code")})</script-->
 <div class="content">
   <br>Nosto script added below:
-  <script src="https://connect.staging.nosto.com/include/qvuhs4m3"></script>
+  <script src="include.js"></script>
+
   <br>Placement target without filter below
   <div id="target-nonfiltered" class="target">
     Placement target without filter
@@ -179,7 +179,6 @@
     }
   }
   window.extraScript = `
-  console.log('es')
   if(Date.now() < loadTarget) {
     loop50ms();
     document.write("<scr"+"ipt>"+extraScript+"</scr"+"ipt>")
@@ -1259,49 +1258,27 @@
   window.loadTarget = Date.now() + (window.params.load_delay || 1700) / 10
   document.write("<scr"+"ipt>"+extraScript+"</scr"+"ipt>")
 </script>
-<script>
-  window.loadTarget = Date.now() + (window.params.load_delay || 1700) / 10
-  document.write("<scr"+"ipt>"+extraScript+"</scr"+"ipt>")
-</script>
-<script>
-  window.loadTarget = Date.now() + (window.params.load_delay || 1700) / 10
-  document.write("<scr"+"ipt>"+extraScript+"</scr"+"ipt>")
-</script>
-<script>
-  window.loadTarget = Date.now() + (window.params.load_delay || 1700) / 10
-  document.write("<scr"+"ipt>"+extraScript+"</scr"+"ipt>")
-</script>
-<script>
-  window.loadTarget = Date.now() + (window.params.load_delay || 1700) / 10
-  document.write("<scr"+"ipt>"+extraScript+"</scr"+"ipt>")
-</script>
-<script>
-  window.loadTarget = Date.now() + (window.params.load_delay || 1700) / 10
-  document.write("<scr"+"ipt>"+extraScript+"</scr"+"ipt>")
-</script>
-<script>
-  window.loadTarget = Date.now() + (window.params.load_delay || 1700) / 10
-  document.write("<scr"+"ipt>"+extraScript+"</scr"+"ipt>")
-</script>
-<script>
-  window.loadTarget = Date.now() + (window.params.load_delay || 1700) / 10
-  document.write("<scr"+"ipt>"+extraScript+"</scr"+"ipt>")
-</script>
-<script>
-  window.loadTarget = Date.now() + (window.params.load_delay || 1700) / 10
-  document.write("<scr"+"ipt>"+extraScript+"</scr"+"ipt>")
-</script>
-<script>
-  window.loadTarget = Date.now() + (window.params.load_delay || 1700) / 10
-  document.write("<scr"+"ipt>"+extraScript+"</scr"+"ipt>")
-</script>
-<script>
-  window.loadTarget = Date.now() + (window.params.load_delay || 1700) / 10
-  document.write("<scr"+"ipt>"+extraScript+"</scr"+"ipt>")
-</script>
 <div class="content">
   Pageload
 </div>
+<div style="height: 2000px;" >
+  loooong
+</div>
+<div class="intersected">
+  ===Intersected content===
+</div>
+<script>
+  setTimeout(()=> {
+    document.body.insertAdjacentHTML("beforeend", `<div class="mutated">mutated here</div>`)
+  }, 3000)
+</script>
+<ul class="copy" data-attr="1">
+  <li>old content</li>
+</ul>
+<ul class="copy2" data-attr="2">
+  <li class="target">old content</li>
+</ul>
+
 
 </body>
 </html>
