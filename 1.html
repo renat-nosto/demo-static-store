@@ -48,5 +48,15 @@
 <div style="height: 600px"></div>
 <div id="nosto-lazy" class="nosto_element nosto_lazy" >lazy</div>
 </div>
+<input id="search">
+<div id="content"></div>
+<div id="front2" class="nosto_element">front2</div>
+<script>
+  let count = 0
+  setInterval(_ => document.body.insertAdjacentHTML("beforeend", `
+  <div id="front${count}" class="nosto_element">${count++}</div>
+  `), 10000)
+</script>
+
 </body>
 </html>
