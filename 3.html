@@ -3,11 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <title>3</title>
-  <style>
-    .nosto_product span {
-      display: block;
-    }
-  </style>
 </head>
 <body>
 <script src="include.js"></script>
@@ -17,17 +12,55 @@
   <span class="name">Product 3</span>
   <span class="image_url">https://renat-nosto.github.io/demo-static-store/3.jpg</span>
   <span class="price">75.00</span>
-  <span class="price_currency_code">EUR</span>
+  <span class="list_price">75</span>
   <span class="availability">InStock</span>
+  <span class="price_currency_code">EUR</span>
   <span class="category">/Cat 3</span>
   <span class="description">Demo product 1</span>
-  <span class="list_price">75</span>
+  <span class="custom_fields">
+    <span class="awesome">true</span>
+  </span>
+
   <span class="brand">Demo</span>
+  <span class="nosto_sku">
+    <span class="id">3-1</span>
+    <span class="name">3-1</span>
+    <span class="price">75.00</span>
+    <span class="list_price">75</span>
+    <span class="availability">InStock</span>
+    <span class="inventory_level">55</span>
+    <span class="url">https://renat-nosto.github.io/demo-static-store/3.html?3-1</span>
+    <span class="image_url">https://renat-nosto.github.io/demo-static-store/green-blue.jpg</span>
+    <span class="custom_fields">
+      <span class="Size">XS</span>
+      <span class="Color">Green</span>
+    </span>
+  </span>
+  <span class="nosto_sku">
+    <span class="id">3-2</span>
+    <span class="name">3-2</span>
+    <span class="price">50.00</span>
+    <span class="list_price">60.00</span>
+    <span class="inventory_level">55</span>
+    <span class="url">https://renat-nosto.github.io/demo-static-store/2.html?2-2</span>
+    <span class="image_url">https://renat-nosto.github.io/demo-static-store/red-yellow.jpg</span>
+    <span class="availability">InStock</span>
+    <span class="custom_fields">
+      <span class="Size">L</span>
+      <span class="Color">Red</span>
+    </span>
+  </span>
 </div>
+<h1>No autoload</h1>
 <script>
-    (function(){var n="nostojs";window[n]=window[n]||function(cb){(window[n].q=window[n].q||[]).push(cb);};})();
-  window.nostojs(a=>
-      a.setAutoLoad(false)
+  (function () {
+    var n = "nostojs"
+    window[n] = window[n] || function (cb) {
+      (window[n].q = window[n].q || []).push(cb)
+    }
+  })()
+  window.nostojs(a =>
+    a.setAutoLoad(false)
   )
 </script>
 </body>
