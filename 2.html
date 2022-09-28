@@ -3,11 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <title>Product 2</title>
-  <style>
-    .nosto_product span {
-      display: block;
-    }
-  </style>
 </head>
 <body>
 <script src="include.js"></script>
@@ -25,6 +20,40 @@
   <span class="description">Demo product 1</span>
   <span class="list_price">60</span>
   <span class="brand">Demo</span>
+  <span class="selected_sku_id">2-1</span>
+  <span class="nosto_sku">
+    <span class="id">2-1</span>
+    <span class="name">2-1</span>
+    <span class="price">50.00</span>
+    <span class="list_price">60.00</span>
+    <span class="inventory_level">55</span>
+    <span class="url">https://renat-nosto.github.io/demo-static-store/2.html?2-1</span>
+    <span class="image_url">/blue-blue.jpg</span>
+    <span class="availability">InStock</span>
+    <span class="custom_fields">
+      <span class="Size">S</span>
+      <span class="Color">Blue</span>
+    </span>
+  </span>
+  <span class="nosto_sku">
+    <span class="id">2-2</span>
+    <span class="name">2-2</span>
+    <span class="price">50.00</span>
+    <span class="list_price">60.00</span>
+    <span class="inventory_level">55</span>
+    <span class="url">https://renat-nosto.github.io/demo-static-store/2.html?2-2</span>
+    <span class="image_url">/pink-red.jpg</span>
+    <span class="availability">InStock</span>
+    <span class="custom_fields">
+      <span class="Size">L</span>
+      <span class="Color">Pink</span>
+    </span>
+  </span>
 </div>
+<script>
+  if(location.search)
+    document.querySelector(".selected_sku_id").textContent = location.search
+</script>
+
 </body>
 </html>
