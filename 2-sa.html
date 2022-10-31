@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Product 2</title>
+</head>
+<body>
+<script src="include.js"></script>
+<script>
+  nostojs(api => {
+    api.defaultSession()
+      .viewProduct('2')
+      .setPlacements(["new-filter-discount","to_all_0"])
+      .setTags(['tag3'])
+      .load()
+      .then(data => {
+        console.log(data);
+      })
+  });
+</script>
+
+</body>
+</html>
