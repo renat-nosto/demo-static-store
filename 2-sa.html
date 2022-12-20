@@ -8,9 +8,10 @@
 <script src="include.js"></script>
 <script>
   nostojs(api => {
+    api.setAutoLoad(false)
     api.defaultSession()
-      .viewCategoty('/cat1')
-      .setPlacements(["new-filter-discount","to_all_0"])
+      .viewCategory('/cat1')
+      .setPlacements(["new-filter-discount","category0"])
       .setTags(['tag3'])
       .load()
       .then(data => {
