@@ -12,7 +12,7 @@
 </head>
 <body>
 <script>
-  history.pushState("", "", location.href + "?variant=x")
+  //history.pushState("", "", location.href + "?variant=x")
 </script>
 <script src="include.js"></script>
 <br>Placement target without filter below
@@ -37,23 +37,37 @@
   <span class="description">Demo product 1</span>
   <span class="list_price">120</span>
   <span class="brand">Demo</span>
+  <span class="nosto_sku">
+    <span class="id">1-1</span>
+    <span class="name">1-1</span>
+    <span class="price">100.00</span>
+    <span class="list_price">100.00</span>
+    <span class="inventory_level">20</span>
+    <span class="url">https://renat-nosto.github.io/demo-static-store/1.html?sku=1-1</span>
+    <span class="image_url">https://renat-nosto.github.io/demo-static-store/blue-blue.jpg</span>
+    <span class="availability">InStock</span>
+    <span class="custom_fields">
+      <span class="Size">S</span>
+      <span class="Color">Blue</span>
+    </span>
+  </span>
   <span class="sdf">value</span>
   <div class="sdf layout">
-      <article class="article">
-        <main class="article main">
-          <span class="elemental name">xxxx</span>
-          <span class="elemental category">xxxx</span>
-        </main>
-      </article>
+    <article class="article">
+      <main class="article main">
+        <span class="elemental name">xxxx</span>
+        <span class="elemental category">xxxx</span>
+      </main>
+    </article>
   </div>
-  </div>
+</div>
 <div id="nosto-eager" class="nosto_element " >eager</div>
 <div style="height: 600px"></div>
 <div id="nosto-lazy" class="nosto_element nosto_lazy" >lazy</div>
-</div>
-<input id="search">
+<label>Search: <input id="search"></label>
 <div id="content"></div>
 <div id="front2" class="nosto_element">front2</div>
+<div id="frontpage-nosto-1" class="nosto_element">frontpage-nosto-1</div>
 <script>
   let count = 0
   setInterval(_ => document.body.insertAdjacentHTML("beforeend", `
