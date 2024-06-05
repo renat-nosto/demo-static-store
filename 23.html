@@ -9,6 +9,8 @@
 <script src="include.js"></script>
 <div class="nosto_page_type">product</div>
 <div class="nosto_product">
+  <span class="selected_sku_id"></span>
+
   <span class="url">https://renat-nosto.github.io/demo-static-store/23.html</span>
   <span class="product_id">23</span>
   <span class="name">Product 23</span>
@@ -20,6 +22,49 @@
   <span class="description">Demo product 23</span>
   <span class="list_price">230</span>
   <span class="brand">Demo</span>
+  <span class="nosto_sku">
+        <span class="id">23-0</span>
+    <span class="name">Product 23-0</span>
+    <span class="price">240</span>
+    <span class="list_price">undefined</span>
+    <span class="inventory_level">2</span>
+    <span class="url">https://renat-nosto.github.io/demo-static-store/23.html#0</span>
+    <span class="image_url">https://renat-nosto.github.io/demo-static-store/1.jpg?23/0</span>
+    <span class="availability">InStock</span>
+    <span class="custom_fields">
+    <span class="color">brown</span>
+    </span>
+  </span><span class="nosto_sku">
+        <span class="id">23-1</span>
+    <span class="name">Product 23-1</span>
+    <span class="price">240</span>
+    <span class="list_price">undefined</span>
+    <span class="inventory_level">2</span>
+    <span class="url">https://renat-nosto.github.io/demo-static-store/23.html#1</span>
+    <span class="image_url">https://renat-nosto.github.io/demo-static-store/1.jpg?23/1</span>
+    <span class="availability">InStock</span>
+    <span class="custom_fields">
+    <span class="color">grey</span>
+    </span>
+  </span><span class="nosto_sku">
+        <span class="id">23-2</span>
+    <span class="name">Product 23-2</span>
+    <span class="price">240</span>
+    <span class="list_price">undefined</span>
+    <span class="inventory_level">2</span>
+    <span class="url">https://renat-nosto.github.io/demo-static-store/23.html#2</span>
+    <span class="image_url">https://renat-nosto.github.io/demo-static-store/1.jpg?23/2</span>
+    <span class="availability">InStock</span>
+    <span class="custom_fields">
+    <span class="color">silver</span>
+    </span>
+  </span>
 </div>
+<script >
+  if(location.hash){
+    document.querySelector(".selected_sku_id").textContent = location.hash.substring(1)
+    }
+
+</script>
 </body>
 </html>

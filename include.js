@@ -6,6 +6,9 @@ document.head.insertAdjacentHTML('beforeend', `<style>
     .nosto_product span:before {
         content: attr(class)' : ';
     }
+       .nosto_element {
+        display: inline-block;
+      }
   </style>
 `)
 

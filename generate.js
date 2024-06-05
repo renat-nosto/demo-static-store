@@ -32,6 +32,8 @@ ids.forEach(async id => {
 <script src="include.js"></script>
 <div class="nosto_page_type">product</div>
 <div class="nosto_product">
+  <span class="selected_sku_id"></span>
+
   <span class="url">https://renat-nosto.github.io/demo-static-store/${id}.html</span>
   <span class="product_id">${id}</span>
   <span class="name">${_source.name}</span>
@@ -43,7 +45,26 @@ ids.forEach(async id => {
   <span class="description">${_source.description}</span>
   <span class="list_price">${_source.listPrice}</span>
   <span class="brand">${_source.brand}</span>
+  ${_source.skus.map(sku => `<span class="nosto_sku">
+        <span class="id">${sku.id}</span>
+    <span class="name">${sku.name}</span>
+    <span class="price">${sku.price}</span>
+    <span class="list_price">${sku.list_price}</span>
+    <span class="inventory_level">2</span>
+    <span class="url">${sku.url}</span>
+    <span class="image_url">${sku.imageUrl}</span>
+    <span class="availability">InStock</span>
+    <span class="custom_fields">
+    ${Object.entries(sku.customFields).map(([k, v]) => `<span class="${k}">${v}</span>`).join("")}
+    </span>
+  </span>`).join("")}
 </div>
+<script >
+  if(location.hash){
+    document.querySelector(".selected_sku_id").textContent = location.hash.substring(1)
+    }
+
+</script>
 </body>
 </html>
 `)
