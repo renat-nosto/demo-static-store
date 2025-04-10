@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
-const len = 80
-const offset = 10
-const ids = Array.from({length: len}).map((_, i) => i + offset)
-const merchant = "renat"
-const es_index = "product_1697128655086"
+const len = 80;
+const offset = 10;
+const ids = Array.from({ length: len }).map((_, i) => i + offset);
+const merchant = "renat";
+const es_index = "product_1697128655086";
 //
 // console.log(process.argv)
 //
@@ -16,12 +16,14 @@ const es_index = "product_1697128655086"
 //   body: JSON.stringify(product(i))
 // }).then(r => r.json()).then(console.log)
 //
-const fs = require("fs")
+import { writeFileSync } from "fs";
 
-ids.forEach(async id => {
-  let doc = await fetch(`http://localhost:9200/${es_index}/_doc/${merchant}_${id}?routing=${merchant}`)
-  let {_source} = await doc.json()
-  fs.writeFileSync(`./${id}.html`, `
+ids.forEach(async (id) => {
+  let doc = await fetch(`http://localhost:9200/${es_index}/_doc/${merchant}_${id}?routing=${merchant}`);
+  let { _source } = await doc.json();
+  writeFileSync(
+    `./${id}.html`,
+    `
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,11 +43,13 @@ ids.forEach(async id => {
   <span class="price">${_source.price}</span>
   <span class="price_currency_code">EUR</span>
   <span class="availability">InStock</span>
-  ${_source.category.map(c => `<span class="category">${c}</span>`).join("")}
+  ${_source.category.map((c) => `<span class="category">${c}</span>`).join("")}
   <span class="description">${_source.description}</span>
   <span class="list_price">${_source.listPrice}</span>
   <span class="brand">${_source.brand}</span>
-  ${_source.skus.map(sku => `<span class="nosto_sku">
+  ${_source.skus
+    .map(
+      (sku) => `<span class="nosto_sku">
         <span class="id">${sku.id}</span>
     <span class="name">${sku.name}</span>
     <span class="price">${sku.price}</span>
@@ -55,9 +59,13 @@ ids.forEach(async id => {
     <span class="image_url">${sku.imageUrl}</span>
     <span class="availability">InStock</span>
     <span class="custom_fields">
-    ${Object.entries(sku.customFields).map(([k, v]) => `<span class="${k}">${v}</span>`).join("")}
+    ${Object.entries(sku.customFields)
+      .map(([k, v]) => `<span class="${k}">${v}</span>`)
+      .join("")}
     </span>
-  </span>`).join("")}
+  </span>`,
+    )
+    .join("")}
 </div>
 <script >
   if(location.hash){
@@ -67,6 +75,6 @@ ids.forEach(async id => {
 </script>
 </body>
 </html>
-`)
-
-})
+`,
+  );
+});
