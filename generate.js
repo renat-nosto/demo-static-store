@@ -4,7 +4,12 @@ const len = 80;
 const offset = 10;
 const ids = Array.from({ length: len }).map((_, i) => i + offset);
 const merchant = "renat";
-const es_index = "product_1697128655086";
+
+const indexes = await fetch("http://localhost:9200/_cat/indices?v&format=json")
+  .then((r) => r.json())
+  .then((data) => data.map((d) => d.index));
+
+const es_index = indexes.find((i) => i.startsWith("product_1"));
 //
 // console.log(process.argv)
 //
@@ -47,6 +52,7 @@ ids.forEach(async (id) => {
   <span class="description">${_source.description}</span>
   <span class="list_price">${_source.listPrice}</span>
   <span class="brand">${_source.brand}</span>
+  ${_source.tags1.map(tag => `<span class="tag1">${tag}</span>`).join("")}
   ${_source.skus
     .map(
       (sku) => `<span class="nosto_sku">
